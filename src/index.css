@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: Sora;
+	font-style: normal;
+	font-optical-sizing: auto;
+	font-weight: 100 800;
+	font-display: swap;
+	src: url("fonts/Sora-VariableFont_wght.woff2") format("woff2");
+}
+
+@theme {
+	/* Fonts */
+	--default-font-family: "Sora", sans-serif;
+
+	/* Colors */
+	--color-*: initial;
+	--color-primary-100: #001133;
+	--color-primary-200: #01297f;
+	--color-primary-500: #0d5bfe;
+	--color-primary-600: #2a6efe;
+	--color-primary-800: #a4c1ff;
+	--color-primary-900: #d6e4ff;
+	--color-primary-950: #f0f5ff;
+	--color-black: #000000;
+	--color-gray-100: #18191b;
+	--color-gray-200: #303236;
+	--color-gray-300: #474a52;
+	--color-gray-400: #5f636d;
+	--color-gray-500: #777c88;
+	--color-gray-600: #9296a0;
+	--color-gray-700: #adb0b8;
+	--color-gray-800: #c9cbcf;
+	--color-gray-900: #e4e5e7;
+	--color-gray-950: #f1f2f3;
+	--color-white: #ffffff;
+
+	--shadow-*: initial;
+	--shadow-sm: 0px 0px 4px
+		color-mix(in oklab, var(--color-primary-200) 40%, transparent);
+	--shadow: 0px 4px 12px
+		color-mix(in oklab, var(--color-primary-200) 40%, transparent);
+	--shadow-lg: 0px 8px 24px
+		color-mix(in oklab, var(--color-primary-200) 40%, transparent);
+}
