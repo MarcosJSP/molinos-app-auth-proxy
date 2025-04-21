@@ -36,4 +36,12 @@ app.post("/access_token/", zv("json", accessTokenSchema), async (c) => {
 	}
 });
 
+app.get("/authorize/", async (c) => {
+	const { FREESOUND_CLIENT_ID } = c.env;
+	const url = new URL("https://freesound.org/apiv2/oauth2/authorize/");
+	url.searchParams.set("client_id", FREESOUND_CLIENT_ID);
+	url.searchParams.set("response_type", "code");
+	return c.redirect(url.toString());
+});
+
 export default app;
