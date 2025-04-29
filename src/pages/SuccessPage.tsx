@@ -30,25 +30,21 @@ const useDebounceClick = () => {
 	};
 };
 
-const getAppUrl = () => {
-	const { code } = queryParams();
-	const protocol = import.meta.env.VITE_APP_PROTOCOL;
-	const url = `${protocol}://browser-auth?code=${code}`;
-	return url;
-};
-
 const SuccessPage: FC = () => {
 	const { wasClicked: wasCopied, debounceClick } = useDebounceClick();
+	const { code } = queryParams();
 
 	useEffect(() => {
 		// Open the desktop app (if installed) with the necessary code for login
-		window.location.href = getAppUrl();
+		const protocol = import.meta.env.VITE_APP_PROTOCOL;
+		const url = `${protocol}://browser-auth?code=${code}`;
+		window.location.href = url;
 	}, []);
 
 	const handleOnclick = () => {
 		debounceClick();
 		// Write the login code to the clipboard
-		navigator.clipboard.writeText(getAppUrl());
+		navigator.clipboard.writeText(code);
 	};
 
 	return (

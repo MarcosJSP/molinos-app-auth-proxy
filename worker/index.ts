@@ -5,8 +5,16 @@ import {
 	getAccessToken,
 	FreesoundErrorResponse,
 } from "./access-token/access-token-get-access-token";
+import { cors } from "hono/cors";
 
 const app = new Hono<{ Bindings: Env }>();
+
+app.use(
+	"*",
+	cors({
+		origin: "*",
+	})
+);
 
 app.post("/access_token/", zv("json", accessTokenSchema), async (c) => {
 	const { code, refresh_token } = c.req.valid("json");
