@@ -20,7 +20,7 @@
 		"zod": "3.24.3"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "^1.0.5",
+		"@cloudflare/vite-plugin": "^1.6.0",
 		"@cloudflare/workers-types": "^4.20250410.0",
 		"@eslint/js": "^9.21.0",
 		"@tailwindcss/vite": "4.1.3",
